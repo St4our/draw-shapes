@@ -1,0 +1,114 @@
+from tkinter import *
+from tkinter import scrolledtext
+from tkinter import filedialog
+from tkinter import Tk, Canvas, Frame, BOTH
+
+window = Tk()  
+window.title("01-02-2022-ПЗ")  
+window.geometry('670x200')  
+ 
+def kv():
+    root = Tk()
+    a= int(txt_a.get())
+    
+    c = Canvas(root, width=700, height=700, bg="#e8f6fc")
+    c.pack()
+ 
+    c.create_rectangle(50, 50, a*42, a*42,
+                       fill="#317beb",
+                       outline="#99e81a",
+                       width=2,
+                       activedash=(5, 4))
+    root.mainloop()
+
+def pr():
+    root = Tk()
+    a= int(txt_a.get())
+    b= int(txt_b.get())
+    c = Canvas(root, width=700, height=700, bg="#e8f6fc")
+    c.pack()
+ 
+    c.create_rectangle(50, 50, b*42, a*42,
+                       fill="#fafc5b",
+                       outline="#f00a84",
+                       width=2,
+                       activedash=(5, 4))
+    root.mainloop()
+
+def kv_n():
+    root = Tk()
+    a= int(txt_a.get())
+    
+    c = Canvas(root, width=700, height=700, bg="#e8f6fc")
+    c.pack()
+ 
+    c.create_rectangle(50, 50, a*42, a*42,
+                       outline="#208211",
+                       width=4,
+                       activedash=(5, 4))
+    root.mainloop()
+
+
+def pr_n():
+    root = Tk()
+    a= int(txt_a.get())
+    b= int(txt_b.get())
+    c = Canvas(root, width=700, height=700, bg="#e8f6fc")
+    c.pack()
+ 
+    c.create_rectangle(50, 50, b*42, a*42,
+                       outline="#d90b49",
+                       width=4,
+                       activedash=(5, 4))
+    root.mainloop()
+
+def krug():
+    root = Tk()
+    a= int(txt_a.get())
+    b= int(txt_b.get())
+    c = Canvas(root, width=700, height=700, bg="#e8f6fc")
+    c.pack()
+ 
+    c.create_oval(50, 10, 150, 110, width=2)
+    c.create_oval(10, 120, 190, 190, 
+              fill='grey70', outline='white')
+
+#1
+#текст
+lbl_1 = Label(window, text="ПЗ_10", font=("Arial Bold", 14), width=15)  
+lbl_1.grid(column=0, row=0)
+
+
+#______начало интервала______
+
+lbl_a = Label(window, text="Число а", font=("Arial Bold", 12))  
+lbl_a.grid(column=1, row=0)
+
+txt_a=Entry(window,width=30, bg="#a5ff8f")  
+txt_a.grid(column=2, row=0)
+#______конец интервала______
+
+lbl_b = Label(window, text="Цисло b", font=("Arial Bold", 12))  
+lbl_b.grid(column=1, row=1)
+
+txt_b=Entry(window,width=30, bg="#a5ff8f")  
+txt_b.grid(column=2, row=1)
+
+
+#кнопки
+
+knopka1 = Button(window, text="Квадрат!", width=20, command=kv)  
+knopka1.grid(column=0, row=3) 
+
+knopka1 = Button(window, text="Прямоугольник!", width=20, command=pr)  
+knopka1.grid(column=1, row=3) 
+
+knopka1 = Button(window, text="Пустой квадрат!", width=20, command=kv_n)  
+knopka1.grid(column=2, row=3)
+
+knopka1 = Button(window, text="Пустой прямоугольник!", width=20, command=pr_n)  
+knopka1.grid(column=3, row=3)
+
+knopka1 = Button(window, text="Круг", width=20, command=krug)  
+knopka1.grid(column=0, row=4)
+
